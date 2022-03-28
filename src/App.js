@@ -1,20 +1,22 @@
 // modules
 import React from "react";
-import { BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 // src
 import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
-// media
-
-// css
+// static
 import './App.css';
 import './markdown.css';
 
 function App() {
   return <React.Fragment>
       <Router>
-        <Home/>
+        <Routes>
+          <Route exact path='/' element={<Home/>} />
+          <Route path='*' element={<NotFound/>} />
+        </Routes>
       </Router>
   </React.Fragment>
 }

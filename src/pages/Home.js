@@ -1,6 +1,17 @@
+// modules
 import React from "react";
+import {Navigate} from "react-router-dom";
+
+// src
+
+// static
+
 
 const Home = ()=>{
+
+	const [redirect, setRedirect] = React.useState(null)
+
+	if(redirect) return <Navigate replace to={redirect} />
 
 	return <React.Fragment>
 		<div className="container-lg px-3 my-5 markdown-body">
